@@ -1,8 +1,14 @@
 {
-    "words": [
-      {"english": "egg", "polish": "jajko"},
-      {"english": "mouse", "polish": "mysz"},
-      {"english": "cat", "polish": "kot"},
-      {"english": "table", "polish": "stół"}
-    ]
-  }
+  "words": [
+    {"english": "egg", "polish": "jajko"},
+    {"english": "mouse", "polish": "mysz"},
+    {"english": "cat", "polish": "kot"},
+    {"english": "table", "polish": "stół"},
+    {"english": "dog", "polish": "pies"},
+    {"english": "apple", "polish": "jabłko"},
+    {"english": "book", "polish": "książka"},
+    {"english": "tree", "polish": "drzewo"},
+    {"english": "river", "polish": "rzeka"},
+    {"english": "cake", "polish": "ciasto"}
+  ]
+}

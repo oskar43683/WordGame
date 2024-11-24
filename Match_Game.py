@@ -1,20 +1,26 @@
+
 import tkinter as tk
 import json
 import random
 
 # Load the word pairs from the JSON file
-with open('words.json', 'r') as file:
+with open('words.json', 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 # Extract the word pairs
 words = data['words']
 
-# Shuffle the words
-random.shuffle(words)
+def get_random_words(words, num=4):
+    return random.sample(words, num)
+
+current_round_words = get_random_words(words)
 
 # Prepare the lists of English and Polish words
-english_words = [word['english'] for word in words]
-polish_words = [word['polish'] for word in words]
+english_words = [word['english'] for word in current_round_words]
+polish_words = [word['polish'] for word in current_round_words]
+
+random.shuffle(english_words)
+random.shuffle(polish_words)
 
 # Store the user's selected word pairs
 selected_english = None
@@ -79,12 +85,13 @@ result_label.pack(pady=20)
 
 # Add English word buttons
 for word in english_words:
-    button = tk.Button(english_frame, text=word, font=("Helvetica", 12), width=15, height=2)
+    button = tk.Button(english_frame, text=word, font = ("Arial", 12), width=15, height=2)
     button.pack(pady=5)
 
 # Add Polish word buttons
+
 for word in polish_words:
-    button = tk.Button(polish_frame, text=word, font=("Helvetica", 12), width=15, height=2)
+    button = tk.Button(polish_frame, text=word, font = ("Arial", 12), width=15, height=2)
     button.pack(pady=5)
 
 # Start with the English buttons
