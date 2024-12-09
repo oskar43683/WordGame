@@ -92,3 +92,4 @@ def start_word_game(frame, go_back_callback):
     # Bind Key Press
     frame.bind("<KeyPress>", handle_keypress)
     frame.focus_set()
+#
