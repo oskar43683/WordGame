@@ -1,0 +1,44 @@
+{
+    "words": [
+        {
+            "english": "Ten",
+            "polish": "Dziesięć"
+        },
+        {
+            "english": "Twenty",
+            "polish": "Dwadzieścia"
+        },
+        {
+            "english": "Thirty",
+            "polish": "Trzydzieści"
+        },
+        {
+            "english": "Forty",
+            "polish": "Czterdzieści"
+        },
+        {
+            "english": "Fifty",
+            "polish": "Pięćdziesiąt"
+        },
+        {
+            "english": "Sixty",
+            "polish": "Sześćdziesiąt"
+        },
+        {
+            "english": "Seventy",
+            "polish": "Siedemdziesiąt"
+        },
+        {
+            "english": "Eighty",
+            "polish": "Osiemdziesiąt"
+        },
+        {
+            "english": "Ninety",
+            "polish": "Dziewięćdziesiąt"
+        },
+        {
+            "english": "One hundred",
+            "polish": "Sto"
+        }
+    ]
+}

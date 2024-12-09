@@ -1,0 +1,64 @@
+{
+    "words": [
+        {
+            "english": "The months of the year",
+            "polish": "Miesiące w roku"
+        },
+        {
+            "english": "January",
+            "polish": "Styczeń"
+        },
+        {
+            "english": "February",
+            "polish": "Luty"
+        },
+        {
+            "english": "March",
+            "polish": "Marzec"
+        },
+        {
+            "english": "April",
+            "polish": "Kwiecień"
+        },
+        {
+            "english": "May",
+            "polish": "Maj"
+        },
+        {
+            "english": "June",
+            "polish": "Czerwiec"
+        },
+        {
+            "english": "July",
+            "polish": "Lipiec"
+        },
+        {
+            "english": "August",
+            "polish": "Sierpień"
+        },
+        {
+            "english": "September",
+            "polish": "Wrzesień"
+        },
+        {
+            "english": "October",
+            "polish": "Październik"
+        },
+        {
+            "english": "November",
+            "polish": "Listopad"
+        },
+        {
+            "english": "December",
+            "polish": "Grudzień"
+        },
+        {
+            "english": "Month",
+            "polish": "Miesiąc"
+        },
+        {
+            "english": "Year",
+            "polish": "Rok"
+        }
+    ]
+}

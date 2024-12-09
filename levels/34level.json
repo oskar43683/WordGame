@@ -1,0 +1,72 @@
+{
+    "words": [
+        {
+            "english": "Mother",
+            "polish": "Matka"
+        },
+        {
+            "english": "Father",
+            "polish": "Ojciec"
+        },
+        {
+            "english": "Brother",
+            "polish": "Brat"
+        },
+        {
+            "english": "Sister",
+            "polish": "Siostra"
+        },
+        {
+            "english": "Son",
+            "polish": "Syn"
+        },
+        {
+            "english": "Daughter",
+            "polish": "Córka"
+        },
+        {
+            "english": "Parents",
+            "polish": "Rodzice"
+        },
+        {
+            "english": "Children",
+            "polish": "Dzieci"
+        },
+        {
+            "english": "Child",
+            "polish": "Dziecko"
+        },
+        {
+            "english": "Stepmother",
+            "polish": "Macocha"
+        },
+        {
+            "english": "Stepfather",
+            "polish": "Ojczym"
+        },
+        {
+            "english": "Stepsister",
+            "polish": "Siostra przyrodnia"
+        },
+        {
+            "english": "Stepbrother",
+            "polish": "Brat przyrodni"
+        },
+        {
+            "english": "Son-in-law",
+            "polish": "Zięć"
+        },
+        {
+            "english": "Daughter-in-law",
+            "polish": "Synowa"
+        },
+        {
+            "english": "Wife",
+            "polish": "Żona"
+        },
+        {
+            "english": "Husband",
+            "polish": "Mąż"
+        }
+    ]
+}

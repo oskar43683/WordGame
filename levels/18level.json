@@ -1,0 +1,80 @@
+{
+    "words": [
+        {
+            "english": "Volcano",
+            "polish": "Wulkan"
+        },
+        {
+            "english": "Canyon",
+            "polish": "Kanion"
+        },
+        {
+            "english": "Forest",
+            "polish": "Las"
+        },
+        {
+            "english": "Jungle",
+            "polish": "Dżungla"
+        },
+        {
+            "english": "Marsh",
+            "polish": "Bagno"
+        },
+        {
+            "english": "Mountain",
+            "polish": "Góra"
+        },
+        {
+            "english": "Mountain range",
+            "polish": "Pasmo górskie"
+        },
+        {
+            "english": "Hill",
+            "polish": "Wzgórze"
+        },
+        {
+            "english": "Waterfall",
+            "polish": "Wodospad"
+        },
+        {
+            "english": "River",
+            "polish": "Rzeka"
+        },
+        {
+            "english": "Lake",
+            "polish": "Jezioro"
+        },
+        {
+            "english": "Desert",
+            "polish": "Pustynia"
+        },
+        {
+            "english": "Peninsula",
+            "polish": "Półwysep"
+        },
+        {
+            "english": "Island",
+            "polish": "Wyspa"
+        },
+        {
+            "english": "Beach",
+            "polish": "Plaża"
+        },
+        {
+            "english": "Ocean",
+            "polish": "Ocean"
+        },
+        {
+            "english": "Sea",
+            "polish": "Morze"
+        },
+        {
+            "english": "Bay",
+            "polish": "Zatoka"
+        },
+        {
+            "english": "Coast",
+            "polish": "Wybrzeże"
+        }
+    ]
+}

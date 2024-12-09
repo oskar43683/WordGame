@@ -1,0 +1,56 @@
+{
+    "words": [
+        {
+            "english": "Surfing",
+            "polish": "Surfing"
+        },
+        {
+            "english": "Swimming",
+            "polish": "Pływanie"
+        },
+        {
+            "english": "Diving",
+            "polish": "Nurkowanie"
+        },
+        {
+            "english": "Cycling",
+            "polish": "Kolarstwo"
+        },
+        {
+            "english": "Archery",
+            "polish": "Łucznictwo"
+        },
+        {
+            "english": "Sailing",
+            "polish": "Żeglarstwo"
+        },
+        {
+            "english": "Fencing",
+            "polish": "Szermierka"
+        },
+        {
+            "english": "Skiing",
+            "polish": "Narciarstwo"
+        },
+        {
+            "english": "Snow boarding",
+            "polish": "Snowboarding"
+        },
+        {
+            "english": "Ice skating",
+            "polish": "Łyżwiarstwo"
+        },
+        {
+            "english": "Boxing",
+            "polish": "Boks"
+        },
+        {
+            "english": "Running",
+            "polish": "Bieganie"
+        },
+        {
+            "english": "Weightlifting",
+            "polish": "Podnoszenie ciężarów"
+        }
+    ]
+}

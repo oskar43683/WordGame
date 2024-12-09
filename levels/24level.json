@@ -1,0 +1,52 @@
+{
+    "words": [
+        {
+            "english": "Guitar",
+            "polish": "Gitara"
+        },
+        {
+            "english": "Drum",
+            "polish": "Bęben"
+        },
+        {
+            "english": "Trumpet",
+            "polish": "Trąbka"
+        },
+        {
+            "english": "Violin",
+            "polish": "Skrzypce"
+        },
+        {
+            "english": "Flute",
+            "polish": "Flet"
+        },
+        {
+            "english": "Tuba",
+            "polish": "Tuba"
+        },
+        {
+            "english": "Harmonica",
+            "polish": "Harmonijka"
+        },
+        {
+            "english": "Piano",
+            "polish": "Fortepian"
+        },
+        {
+            "english": "Tambourine",
+            "polish": "Tamburyn"
+        },
+        {
+            "english": "Organ",
+            "polish": "Organy"
+        },
+        {
+            "english": "Harp",
+            "polish": "Harfa"
+        },
+        {
+            "english": "Instrument",
+            "polish": "Instrument"
+        }
+    ]
+}

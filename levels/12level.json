@@ -1,0 +1,44 @@
+{
+    "words": [
+        {
+            "english": "One hundred",
+            "polish": "Sto"
+        },
+        {
+            "english": "Two hundred",
+            "polish": "Dwieście"
+        },
+        {
+            "english": "Three hundred",
+            "polish": "Trzysta"
+        },
+        {
+            "english": "Four hundred",
+            "polish": "Czterysta"
+        },
+        {
+            "english": "Five hundred",
+            "polish": "Pięćset"
+        },
+        {
+            "english": "Six hundred",
+            "polish": "Sześćset"
+        },
+        {
+            "english": "Seven hundred",
+            "polish": "Siedemset"
+        },
+        {
+            "english": "Eight hundred",
+            "polish": "Osiemset"
+        },
+        {
+            "english": "Nine hundred",
+            "polish": "Dziewięćset"
+        },
+        {
+            "english": "One thousand",
+            "polish": "Tysiąc"
+        }
+    ]
+}

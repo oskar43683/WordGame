@@ -1,0 +1,48 @@
+{
+    "words": [
+        {
+            "english": "Solar system",
+            "polish": "Układ słoneczny"
+        },
+        {
+            "english": "Sun",
+            "polish": "Słońce"
+        },
+        {
+            "english": "Mercury",
+            "polish": "Merkury"
+        },
+        {
+            "english": "Venus",
+            "polish": "Wenus"
+        },
+        {
+            "english": "Earth",
+            "polish": "Ziemia"
+        },
+        {
+            "english": "Mars",
+            "polish": "Mars"
+        },
+        {
+            "english": "Jupiter",
+            "polish": "Jowisz"
+        },
+        {
+            "english": "Saturn",
+            "polish": "Saturn"
+        },
+        {
+            "english": "Uranus",
+            "polish": "Uran"
+        },
+        {
+            "english": "Neptune",
+            "polish": "Neptun"
+        },
+        {
+            "english": "Pluto",
+            "polish": "Pluton"
+        }
+    ]
+}

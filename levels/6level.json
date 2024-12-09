@@ -1,0 +1,48 @@
+{
+    "words": [
+        {
+            "english": "The days of the week",
+            "polish": "Dni tygodnia"
+        },
+        {
+            "english": "Monday",
+            "polish": "Poniedziałek"
+        },
+        {
+            "english": "Tuesday",
+            "polish": "Wtorek"
+        },
+        {
+            "english": "Wednesday",
+            "polish": "Środa"
+        },
+        {
+            "english": "Thursday",
+            "polish": "Czwartek"
+        },
+        {
+            "english": "Friday",
+            "polish": "Piątek"
+        },
+        {
+            "english": "Saturday",
+            "polish": "Sobota"
+        },
+        {
+            "english": "Sunday",
+            "polish": "Niedziela"
+        },
+        {
+            "english": "Day",
+            "polish": "Dzień"
+        },
+        {
+            "english": "Week",
+            "polish": "Tydzień"
+        },
+        {
+            "english": "Weekend",
+            "polish": "Weekend"
+        }
+    ]
+}

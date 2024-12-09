@@ -1,0 +1,80 @@
+{
+    "words": [
+        {
+            "english": "Hello",
+            "polish": "Cześć"
+        },
+        {
+            "english": "Good morning",
+            "polish": "Dzień dobry"
+        },
+        {
+            "english": "Good afternoon",
+            "polish": "Dzień dobry"
+        },
+        {
+            "english": "Good evening",
+            "polish": "Dobry wieczór"
+        },
+        {
+            "english": "Good night",
+            "polish": "Dobranoc"
+        },
+        {
+            "english": "What is your name?",
+            "polish": "Jak masz na imię?"
+        },
+        {
+            "english": "My name is ___",
+            "polish": "Nazywam się ___"
+        },
+        {
+            "english": "Sorry, I did not hear you",
+            "polish": "Przepraszam, nie dosłyszałem"
+        },
+        {
+            "english": "Where do you live?",
+            "polish": "Gdzie mieszkasz?"
+        },
+        {
+            "english": "Where are you from?",
+            "polish": "Skąd pochodzisz?"
+        },
+        {
+            "english": "How are you?",
+            "polish": "Jak się masz?"
+        },
+        {
+            "english": "Fine, thank you",
+            "polish": "Dobrze, dziękuję"
+        },
+        {
+            "english": "And you?",
+            "polish": "A ty?"
+        },
+        {
+            "english": "Nice to meet you",
+            "polish": "Miło cię poznać"
+        },
+        {
+            "english": "Nice to see you",
+            "polish": "Miło cię widzieć"
+        },
+        {
+            "english": "Have a nice day",
+            "polish": "Miłego dnia"
+        },
+        {
+            "english": "See you later",
+            "polish": "Do zobaczenia"
+        },
+        {
+            "english": "See you tomorrow",
+            "polish": "Do zobaczenia jutro"
+        },
+        {
+            "english": "Goodbye",
+            "polish": "Do widzenia"
+        }
+    ]
+}

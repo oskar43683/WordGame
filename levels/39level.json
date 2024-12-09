@@ -1,0 +1,56 @@
+{
+    "words": [
+        {
+            "english": "Coat",
+            "polish": "Płaszcz"
+        },
+        {
+            "english": "Jacket",
+            "polish": "Kurtka"
+        },
+        {
+            "english": "Raincoat",
+            "polish": "Płaszcz przeciwdeszczowy"
+        },
+        {
+            "english": "Headscarf",
+            "polish": "Chusta"
+        },
+        {
+            "english": "Sweater",
+            "polish": "Sweter"
+        },
+        {
+            "english": "Scarf",
+            "polish": "Szal"
+        },
+        {
+            "english": "Gloves",
+            "polish": "Rękawiczki"
+        },
+        {
+            "english": "Cap",
+            "polish": "Czapka"
+        },
+        {
+            "english": "Hat",
+            "polish": "Kapelusz"
+        },
+        {
+            "english": "Boots",
+            "polish": "Buty"
+        },
+        {
+            "english": "Shoes",
+            "polish": "Obuwie"
+        },
+        {
+            "english": "Sandals",
+            "polish": "Sandały"
+        },
+        {
+            "english": "Umbrella",
+            "polish": "Parasol"
+        }
+    ]
+}

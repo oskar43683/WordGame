@@ -1,0 +1,72 @@
+{
+    "words": [
+        {
+            "english": "Please",
+            "polish": "Proszę"
+        },
+        {
+            "english": "Thank you",
+            "polish": "Dziękuję"
+        },
+        {
+            "english": "Yes",
+            "polish": "Tak"
+        },
+        {
+            "english": "No",
+            "polish": "Nie"
+        },
+        {
+            "english": "How do you say?",
+            "polish": "Jak to powiedzieć?"
+        },
+        {
+            "english": "Speak slowly",
+            "polish": "Proszę mówić wolniej"
+        },
+        {
+            "english": "Repeat, please",
+            "polish": "Proszę powtórzyć"
+        },
+        {
+            "english": "Again",
+            "polish": "Jeszcze raz"
+        },
+        {
+            "english": "Word for word",
+            "polish": "Słowo po słowie"
+        },
+        {
+            "english": "Slowly",
+            "polish": "Powoli"
+        },
+        {
+            "english": "What did you say?",
+            "polish": "Co powiedziałeś?"
+        },
+        {
+            "english": "I don't understand",
+            "polish": "Nie rozumiem"
+        },
+        {
+            "english": "Do you understand?",
+            "polish": "Czy rozumiesz?"
+        },
+        {
+            "english": "What does it mean?",
+            "polish": "Co to oznacza?"
+        },
+        {
+            "english": "I don’t know",
+            "polish": "Nie wiem"
+        },
+        {
+            "english": "Do you speak English?",
+            "polish": "Czy mówisz po angielsku?"
+        },
+        {
+            "english": "Yes, a little",
+            "polish": "Tak, trochę"
+        }
+    ]
+}

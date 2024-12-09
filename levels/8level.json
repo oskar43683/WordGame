@@ -1,0 +1,48 @@
+{
+    "words": [
+        {
+            "english": "Numbers",
+            "polish": "Liczby"
+        },
+        {
+            "english": "One",
+            "polish": "Jeden"
+        },
+        {
+            "english": "Two",
+            "polish": "Dwa"
+        },
+        {
+            "english": "Three",
+            "polish": "Trzy"
+        },
+        {
+            "english": "Four",
+            "polish": "Cztery"
+        },
+        {
+            "english": "Five",
+            "polish": "Pięć"
+        },
+        {
+            "english": "Six",
+            "polish": "Sześć"
+        },
+        {
+            "english": "Seven",
+            "polish": "Siedem"
+        },
+        {
+            "english": "Eight",
+            "polish": "Osiem"
+        },
+        {
+            "english": "Nine",
+            "polish": "Dziewięć"
+        },
+        {
+            "english": "Ten",
+            "polish": "Dziesięć"
+        }
+    ]
+}

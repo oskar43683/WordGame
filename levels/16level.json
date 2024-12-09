@@ -1,0 +1,48 @@
+{
+    "words": [
+        {
+            "english": "Math",
+            "polish": "Matematyka"
+        },
+        {
+            "english": "Science",
+            "polish": "Nauki przyrodnicze"
+        },
+        {
+            "english": "History",
+            "polish": "Historia"
+        },
+        {
+            "english": "Reading",
+            "polish": "Czytanie"
+        },
+        {
+            "english": "Writing",
+            "polish": "Pisanie"
+        },
+        {
+            "english": "Music",
+            "polish": "Muzyka"
+        },
+        {
+            "english": "Foreign language",
+            "polish": "Język obcy"
+        },
+        {
+            "english": "Geography",
+            "polish": "Geografia"
+        },
+        {
+            "english": "Art",
+            "polish": "Plastyka"
+        },
+        {
+            "english": "Biology",
+            "polish": "Biologia"
+        },
+        {
+            "english": "Physics",
+            "polish": "Fizyka"
+        }
+    ]
+}

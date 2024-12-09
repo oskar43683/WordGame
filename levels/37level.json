@@ -1,0 +1,44 @@
+{
+    "words": [
+        {
+            "english": "Are you married?",
+            "polish": "Czy jesteś mężatką?"
+        },
+        {
+            "english": "How long have you been married?",
+            "polish": "Jak długo jesteście małżeństwem?"
+        },
+        {
+            "english": "Do you have children?",
+            "polish": "Masz dzieci?"
+        },
+        {
+            "english": "Is she your mother?",
+            "polish": "Czy to Twoja matka?"
+        },
+        {
+            "english": "Who is your father?",
+            "polish": "Kim jest twój ojciec?"
+        },
+        {
+            "english": "Do you have a girlfriend?",
+            "polish": "Masz dziewczynę?"
+        },
+        {
+            "english": "Do you have a boyfriend?",
+            "polish": "Masz chłopaka?"
+        },
+        {
+            "english": "Are you related?",
+            "polish": "Czy jesteś spokrewniony?"
+        },
+        {
+            "english": "How old are you?",
+            "polish": "Ile masz lat?"
+        },
+        {
+            "english": "How old is your sister?",
+            "polish": "Ile lat ma twoja siostra?"
+        }
+    ]
+}

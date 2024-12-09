@@ -1,0 +1,80 @@
+{
+    "words": [
+        {
+            "english": "Birthday",
+            "polish": "Urodziny"
+        },
+        {
+            "english": "Anniversary",
+            "polish": "Rocznica"
+        },
+        {
+            "english": "Holiday",
+            "polish": "Święto"
+        },
+        {
+            "english": "Funeral",
+            "polish": "Pogrzeb"
+        },
+        {
+            "english": "Graduation",
+            "polish": "Wręczenie dyplomów"
+        },
+        {
+            "english": "Wedding",
+            "polish": "Ślub"
+        },
+        {
+            "english": "Happy New Year",
+            "polish": "Szczęśliwego Nowego Roku"
+        },
+        {
+            "english": "Happy birthday",
+            "polish": "Wszystkiego najlepszego z okazji urodzin"
+        },
+        {
+            "english": "Congratulations",
+            "polish": "Gratulacje"
+        },
+        {
+            "english": "Good luck",
+            "polish": "Powodzenia"
+        },
+        {
+            "english": "Gift",
+            "polish": "Prezent"
+        },
+        {
+            "english": "Party",
+            "polish": "Impreza"
+        },
+        {
+            "english": "Birthday card",
+            "polish": "Kartka urodzinowa"
+        },
+        {
+            "english": "Celebration",
+            "polish": "Uroczystość"
+        },
+        {
+            "english": "Music",
+            "polish": "Muzyka"
+        },
+        {
+            "english": "Do you want to dance?",
+            "polish": "Chcesz zatańczyć?"
+        },
+        {
+            "english": "Yes, I want to dance",
+            "polish": "Tak, chcę tańczyć"
+        },
+        {
+            "english": "I don’t want to dance",
+            "polish": "Nie chcę tańczyć"
+        },
+        {
+            "english": "Will you marry me?",
+            "polish": "Wyjdziesz za mnie?"
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "words": [
+        {
+            "english": "Seasons",
+            "polish": "Pory roku"
+        },
+        {
+            "english": "Winter",
+            "polish": "Zima"
+        },
+        {
+            "english": "Summer",
+            "polish": "Lato"
+        },
+        {
+            "english": "Spring",
+            "polish": "Wiosna"
+        },
+        {
+            "english": "Autumn",
+            "polish": "Jesień"
+        },
+        {
+            "english": "Sky",
+            "polish": "Niebo"
+        },
+        {
+            "english": "Cloud",
+            "polish": "Chmura"
+        },
+        {
+            "english": "Rainbow",
+            "polish": "Tęcza"
+        },
+        {
+            "english": "Cold (weather)",
+            "polish": "Zimno"
+        },
+        {
+            "english": "Hot (weather)",
+            "polish": "Gorąco"
+        },
+        {
+            "english": "It is hot",
+            "polish": "Jest gorąco"
+        },
+        {
+            "english": "It is cold",
+            "polish": "Jest zimno"
+        },
+        {
+            "english": "It is sunny",
+            "polish": "Jest słonecznie"
+        },
+        {
+            "english": "It is cloudy",
+            "polish": "Jest pochmurnie"
+        },
+        {
+            "english": "It is humid",
+            "polish": "Jest wilgotnie"
+        },
+        {
+            "english": "It is raining",
+            "polish": "Pada deszcz"
+        },
+        {
+            "english": "It is snowing",
+            "polish": "Pada śnieg"
+        },
+        {
+            "english": "It is windy",
+            "polish": "Jest wietrznie"
+        },
+        {
+            "english": "How is the weather?",
+            "polish": "Jaka jest pogoda?"
+        },
+        {
+            "english": "Good weather",
+            "polish": "Dobra pogoda"
+        },
+        {
+            "english": "Bad weather",
+            "polish": "Zła pogoda"
+        },
+        {
+            "english": "What is the temperature?",
+            "polish": "Jaka jest temperatura?"
+        },
+        {
+            "english": "It is 24 degrees",
+            "polish": "Mamy 24 stopnie"
+        }
+    ]
+}

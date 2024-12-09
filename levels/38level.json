@@ -1,0 +1,64 @@
+{
+    "words": [
+        {
+            "english": "Clothing",
+            "polish": "Odzież"
+        },
+        {
+            "english": "Blouse",
+            "polish": "Bluzka"
+        },
+        {
+            "english": "Dress",
+            "polish": "Sukienka"
+        },
+        {
+            "english": "Shorts",
+            "polish": "Krótkie spodenki"
+        },
+        {
+            "english": "Pants",
+            "polish": "Spodnie"
+        },
+        {
+            "english": "Skirt",
+            "polish": "Spódnica"
+        },
+        {
+            "english": "Shirt",
+            "polish": "Koszula"
+        },
+        {
+            "english": "T-shirt",
+            "polish": "Koszulka"
+        },
+        {
+            "english": "Purse",
+            "polish": "Portmonetka"
+        },
+        {
+            "english": "Overalls",
+            "polish": "Ogrodniczki"
+        },
+        {
+            "english": "Jeans",
+            "polish": "Dżinsy"
+        },
+        {
+            "english": "Suit",
+            "polish": "Garnitur"
+        },
+        {
+            "english": "Leggings",
+            "polish": "Legginsy"
+        },
+        {
+            "english": "Belt",
+            "polish": "Pasek"
+        },
+        {
+            "english": "Tie",
+            "polish": "Krawat"
+        }
+    ]
+}

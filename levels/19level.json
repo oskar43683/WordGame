@@ -1,0 +1,44 @@
+{
+    "words": [
+        {
+            "english": "Galaxy",
+            "polish": "Galaktyka"
+        },
+        {
+            "english": "Star",
+            "polish": "Gwiazda"
+        },
+        {
+            "english": "Moon",
+            "polish": "Księżyc"
+        },
+        {
+            "english": "Planet",
+            "polish": "Planeta"
+        },
+        {
+            "english": "Asteroid",
+            "polish": "Asteroida"
+        },
+        {
+            "english": "Comet",
+            "polish": "Kometa"
+        },
+        {
+            "english": "Meteor",
+            "polish": "Meteor"
+        },
+        {
+            "english": "Space",
+            "polish": "Kosmos"
+        },
+        {
+            "english": "Universe",
+            "polish": "Wszechświat"
+        },
+        {
+            "english": "Telescope",
+            "polish": "Teleskop"
+        }
+    ]
+}

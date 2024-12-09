@@ -1,0 +1,76 @@
+{
+    "words": [
+        {
+            "english": "Grandparents",
+            "polish": "Dziadkowie"
+        },
+        {
+            "english": "Grandfather",
+            "polish": "Dziadek"
+        },
+        {
+            "english": "Grandmother",
+            "polish": "Babcia"
+        },
+        {
+            "english": "Grandson",
+            "polish": "Wnuczek"
+        },
+        {
+            "english": "Granddaughter",
+            "polish": "Wnuczka"
+        },
+        {
+            "english": "Grandchildren",
+            "polish": "Wnuki"
+        },
+        {
+            "english": "Grandchild",
+            "polish": "Wnuk"
+        },
+        {
+            "english": "Aunt",
+            "polish": "Ciotka"
+        },
+        {
+            "english": "Uncle",
+            "polish": "Wujek"
+        },
+        {
+            "english": "Cousin (female)",
+            "polish": "Kuzynka"
+        },
+        {
+            "english": "Cousin (male)",
+            "polish": "Kuzyn"
+        },
+        {
+            "english": "Nephew",
+            "polish": "Siostrzeniec"
+        },
+        {
+            "english": "Niece",
+            "polish": "Siostrzenica"
+        },
+        {
+            "english": "Father-in-law",
+            "polish": "Teść"
+        },
+        {
+            "english": "Mother-in-law",
+            "polish": "Teściowa"
+        },
+        {
+            "english": "Brother-in-law",
+            "polish": "Szwagier"
+        },
+        {
+            "english": "Sister-in-law",
+            "polish": "Szwagierka"
+        },
+        {
+            "english": "Relative",
+            "polish": "Krewny"
+        }
+    ]
+}

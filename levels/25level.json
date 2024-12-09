@@ -1,0 +1,44 @@
+{
+    "words": [
+        {
+            "english": "Water",
+            "polish": "Woda"
+        },
+        {
+            "english": "Swimming pool",
+            "polish": "Basen"
+        },
+        {
+            "english": "Lifeguard",
+            "polish": "Ratownik"
+        },
+        {
+            "english": "Kickboard",
+            "polish": "Kickboard"
+        },
+        {
+            "english": "Is there a lifeguard?",
+            "polish": "Czy jest ratownik?"
+        },
+        {
+            "english": "Is the water cold?",
+            "polish": "Czy woda jest zimna?"
+        },
+        {
+            "english": "Bathing suit",
+            "polish": "Kostium kąpielowy"
+        },
+        {
+            "english": "Sunglasses",
+            "polish": "Okulary przeciwsłoneczne"
+        },
+        {
+            "english": "Towels",
+            "polish": "Ręczniki"
+        },
+        {
+            "english": "Sunblock",
+            "polish": "Filtr przeciwsłoneczny"
+        }
+    ]
+}

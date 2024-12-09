@@ -1,0 +1,44 @@
+{
+    "words": [
+        {
+            "english": "Eleven",
+            "polish": "Jedenaście"
+        },
+        {
+            "english": "Twelve",
+            "polish": "Dwanaście"
+        },
+        {
+            "english": "Thirteen",
+            "polish": "Trzynaście"
+        },
+        {
+            "english": "Fourteen",
+            "polish": "Czternaście"
+        },
+        {
+            "english": "Fifteen",
+            "polish": "Piętnaście"
+        },
+        {
+            "english": "Sixteen",
+            "polish": "Szesnaście"
+        },
+        {
+            "english": "Seventeen",
+            "polish": "Siedemnaście"
+        },
+        {
+            "english": "Eighteen",
+            "polish": "Osiemnaście"
+        },
+        {
+            "english": "Nineteen",
+            "polish": "Dziewiętnaście"
+        },
+        {
+            "english": "Twenty",
+            "polish": "Dwadzieścia"
+        }
+    ]
+}

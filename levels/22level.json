@@ -1,0 +1,48 @@
+{
+    "words": [
+        {
+            "english": "Soccer",
+            "polish": "Piłka nożna"
+        },
+        {
+            "english": "Baseball",
+            "polish": "Bejsbol"
+        },
+        {
+            "english": "American football",
+            "polish": "Futbol amerykański"
+        },
+        {
+            "english": "Basketball",
+            "polish": "Koszykówka"
+        },
+        {
+            "english": "Hockey",
+            "polish": "Hokej"
+        },
+        {
+            "english": "Volleyball",
+            "polish": "Siatkówka"
+        },
+        {
+            "english": "Cricket",
+            "polish": "Krykiet"
+        },
+        {
+            "english": "Tennis",
+            "polish": "Tenis"
+        },
+        {
+            "english": "Golf",
+            "polish": "Golf"
+        },
+        {
+            "english": "Bowling",
+            "polish": "Kręgle"
+        },
+        {
+            "english": "Rugby",
+            "polish": "Rugby"
+        }
+    ]
+}

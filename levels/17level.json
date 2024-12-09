@@ -1,0 +1,64 @@
+{
+    "words": [
+        {
+            "english": "Color",
+            "polish": "Kolor"
+        },
+        {
+            "english": "Black",
+            "polish": "Czarny"
+        },
+        {
+            "english": "Blue",
+            "polish": "Niebieski"
+        },
+        {
+            "english": "Brown",
+            "polish": "Brązowy"
+        },
+        {
+            "english": "Green",
+            "polish": "Zielony"
+        },
+        {
+            "english": "Orange",
+            "polish": "Pomarańczowy"
+        },
+        {
+            "english": "Purple",
+            "polish": "Fioletowy"
+        },
+        {
+            "english": "Red",
+            "polish": "Czerwony"
+        },
+        {
+            "english": "White",
+            "polish": "Biały"
+        },
+        {
+            "english": "Yellow",
+            "polish": "Żółty"
+        },
+        {
+            "english": "Gray",
+            "polish": "Szary"
+        },
+        {
+            "english": "Gold",
+            "polish": "Złoty"
+        },
+        {
+            "english": "Silver",
+            "polish": "Srebrny"
+        },
+        {
+            "english": "What color is it?",
+            "polish": "Jaki to kolor"
+        },
+        {
+            "english": "The color is red",
+            "polish": "Ten kolor to czerwony"
+        }
+    ]
+}

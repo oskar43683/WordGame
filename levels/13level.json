@@ -1,0 +1,44 @@
+{
+    "words": [
+        {
+            "english": "One thousand",
+            "polish": "Tysiąc"
+        },
+        {
+            "english": "Two thousand",
+            "polish": "Dwa tysiące"
+        },
+        {
+            "english": "Three thousand",
+            "polish": "Trzy tysiące"
+        },
+        {
+            "english": "Four thousand",
+            "polish": "Cztery tysiące"
+        },
+        {
+            "english": "Five thousand",
+            "polish": "Pięć tysięcy"
+        },
+        {
+            "english": "Six thousand",
+            "polish": "Sześć tysięcy"
+        },
+        {
+            "english": "Seven thousand",
+            "polish": "Siedem tysięcy"
+        },
+        {
+            "english": "Eight thousand",
+            "polish": "Osiem tysięcy"
+        },
+        {
+            "english": "Nine thousand",
+            "polish": "Dziewięć tysięcy"
+        },
+        {
+            "english": "Ten thousand",
+            "polish": "Dziesięć tysięcy"
+        }
+    ]
+}

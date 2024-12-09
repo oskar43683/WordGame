@@ -1,0 +1,44 @@
+{
+    "words": [
+        {
+            "english": "Can the parrot talk?",
+            "polish": "Czy papuga może mówić?"
+        },
+        {
+            "english": "Is the snake poisonous?",
+            "polish": "Czy ten wąż jest jadowity?"
+        },
+        {
+            "english": "Are there always so many flies?",
+            "polish": "Czy zawsze jest tutaj tyle much?"
+        },
+        {
+            "english": "What type of spider?",
+            "polish": "Jaki to rodzaj pająka?"
+        },
+        {
+            "english": "Cockroaches are dirty",
+            "polish": "Karaluchy są brudne"
+        },
+        {
+            "english": "This is mosquito repellent",
+            "polish": "To jest środek odstraszający komary"
+        },
+        {
+            "english": "This is insect repellent",
+            "polish": "To jest środek odstraszający owady"
+        },
+        {
+            "english": "Do you have a dog?",
+            "polish": "Czy masz psa?"
+        },
+        {
+            "english": "I am allergic to cats",
+            "polish": "Mam uczulenie na koty"
+        },
+        {
+            "english": "I have a bird",
+            "polish": "Mam ptaka"
+        }
+    ]
+}

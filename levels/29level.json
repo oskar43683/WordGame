@@ -1,0 +1,84 @@
+{
+    "words": [
+        {
+            "english": "Animals",
+            "polish": "Zwierzęta"
+        },
+        {
+            "english": "Rabbit",
+            "polish": "Królik"
+        },
+        {
+            "english": "Hen",
+            "polish": "Kura"
+        },
+        {
+            "english": "Rooster",
+            "polish": "Kogut"
+        },
+        {
+            "english": "Horse",
+            "polish": "Koń"
+        },
+        {
+            "english": "Chicken",
+            "polish": "Kurczak"
+        },
+        {
+            "english": "Pig",
+            "polish": "Świnia"
+        },
+        {
+            "english": "Cow",
+            "polish": "Krowa"
+        },
+        {
+            "english": "Sheep",
+            "polish": "Owca"
+        },
+        {
+            "english": "Goat",
+            "polish": "Koza"
+        },
+        {
+            "english": "Llama",
+            "polish": "Lama"
+        },
+        {
+            "english": "Donkey",
+            "polish": "Osioł"
+        },
+        {
+            "english": "Camel",
+            "polish": "Wielbłąd"
+        },
+        {
+            "english": "Cat",
+            "polish": "Kot"
+        },
+        {
+            "english": "Dog",
+            "polish": "Pies"
+        },
+        {
+            "english": "Mouse",
+            "polish": "Mysz"
+        },
+        {
+            "english": "Frog",
+            "polish": "Żaba"
+        },
+        {
+            "english": "Rat",
+            "polish": "Szczur"
+        },
+        {
+            "english": "Barn",
+            "polish": "Stodoła"
+        },
+        {
+            "english": "Farm",
+            "polish": "Gospodarstwo"
+        }
+    ]
+}
