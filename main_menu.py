@@ -51,7 +51,6 @@ class GameApp(tk.Tk):
         for widget in self.container.winfo_children():
             widget.destroy()
 
-
 if __name__ == "__main__":
     app = GameApp()
     app.mainloop()
