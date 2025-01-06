@@ -1,21 +1,20 @@
-def start_match_game(frame, go_back_callback):
-    import tkinter as tk
-    import json
-    import random
+import tkinter as tk
+import random
+import json
+import level_selection
+import sys
+import os
 
+def start_match_game(frame, go_back_callback, level_file):
     # Clear the existing frame
     for widget in frame.winfo_children():
         widget.destroy()
 
-    # Load the word pairs from a UTF-8 encoded JSON file
-    with open('words.json', 'r', encoding='utf-8') as file:
-        data = json.load(file)
-
-    # Extract the word pairs from the loaded data
-    words = data['words']
+    # Load the word pairs from the selected level JSON file
+    words = get_level_words(level_file)
 
     # Function to get a random subset of 4 words
-    def get_random_words(words, num=4):
+    def get_random_words(words, num=5):
         return random.sample(words, num)
 
     # Get 4 random word pairs for the current round
@@ -42,18 +41,21 @@ def start_match_game(frame, go_back_callback):
 
         # Check if the selected pair matches
         correct_pair = next(
-            (pair for pair in current_round_words if pair['english'] == selected_english and pair['polish'] == selected_polish),
+            (pair for pair in current_round_words 
+                if pair['english'] == selected_english and pair['polish'] == selected_polish),
             None,
         )
 
         if correct_pair:
             result_label.config(text="Correct!", fg="green")
-            selected_english_button.config(state="disabled", bg="lightgreen")
-            selected_polish_button.config(state="disabled", bg="lightgreen")
+            selected_english_button.config(state="disabled", bg="lime")
+            selected_polish_button.config(state="disabled", bg="lime")
             correct_matches += 1
         else:
             result_label.config(text="Try again!", fg="red")
-            frame.after(1000, flip_back)
+            selected_english_button.config(state="normal", bg="lightblue")
+            selected_polish_button.config(state="normal", bg="lightgreen")
+            #frame.after(1000, flip_back)
 
         if correct_matches == len(current_round_words):
             result_label.config(text="You won!", fg="blue")
@@ -66,11 +68,11 @@ def start_match_game(frame, go_back_callback):
         selected_polish_button = None
 
     # Reset mismatched buttons
-    def flip_back():
-        if selected_english_button:
-            selected_english_button.config(bg="lightblue", state="normal")
-        if selected_polish_button:
-            selected_polish_button.config(bg="lightgreen", state="normal")
+    # def flip_back():
+    #     if selected_english_button:
+    #         selected_english_button.config(bg="lightblue", state="normal")
+    #     if selected_polish_button:
+    #         selected_polish_button.config(bg="lightgreen", state="normal")
 
     # Disable all buttons when the game ends
     def disable_buttons():
@@ -85,6 +87,8 @@ def start_match_game(frame, go_back_callback):
         selected_english = button.cget("text")
         selected_english_button = button
         button.config(bg="lightgray", state="disabled")
+        if selected_polish:
+            check_match()
 
     # Handle Polish button selection
     def select_polish(button):
@@ -92,7 +96,11 @@ def start_match_game(frame, go_back_callback):
         selected_polish = button.cget("text")
         selected_polish_button = button
         button.config(bg="lightgray", state="disabled")
-        check_match()
+        if selected_english:
+            check_match()
+        # else:
+        #     result_label.config(text="Select an English word first!", fg="orange")
+        #     button.config(bg="lightgreen", state="normal")
 
     # Add UI components to the frame
     label = tk.Label(frame, text="Match the Words Game", font=("Arial", 18), bg="#1a1a2e", fg="#ffffff")
@@ -110,13 +118,26 @@ def start_match_game(frame, go_back_callback):
 
     # Add English word buttons
     for word in english_words:
-        button = tk.Button(english_frame, text=word, font=("Arial", 14), bg="lightblue", width=15, height=2)
+        button = tk.Button(
+            english_frame, 
+            text=word, 
+            font=("Arial", 14), 
+            bg="lightblue", 
+            width=30, 
+            height=2
+            )
         button.config(command=lambda button=button: select_english(button))
         button.pack(pady=5)
 
     # Add Polish word buttons
     for word in polish_words:
-        button = tk.Button(polish_frame, text=word, font=("Arial", 14), bg="lightgreen", width=15, height=2)
+        button = tk.Button(
+            polish_frame, 
+            text=word, 
+            font=("Arial", 14), 
+            bg="lightgreen", 
+            width=30, 
+            height=2)
         button.config(command=lambda button=button: select_polish(button))
         button.pack(pady=5)
 
@@ -132,4 +153,18 @@ def start_match_game(frame, go_back_callback):
         command=go_back_callback,
     )
     back_button.pack(pady=10, ipadx=10, ipady=5)
-#
+
+def get_resource_path(relative_path):
+    """Get the absolute path to a resource, considering PyInstaller's bundle."""
+    if getattr(sys, 'frozen', False):  # Running as a PyInstaller executable
+        base_path = sys._MEIPASS
+    else:
+        base_path = os.path.dirname(__file__)
+    return os.path.join(base_path, relative_path)
+
+def get_level_words(level_file):
+    """Load words from the selected level JSON file."""
+    level_path = get_resource_path(f"levels/{level_file}")
+    with open(level_path, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    return data['words']
