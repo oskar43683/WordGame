@@ -67,13 +67,6 @@ def start_match_game(frame, go_back_callback, level_file):
         selected_english_button = None
         selected_polish_button = None
 
-    # Reset mismatched buttons
-    # def flip_back():
-    #     if selected_english_button:
-    #         selected_english_button.config(bg="lightblue", state="normal")
-    #     if selected_polish_button:
-    #         selected_polish_button.config(bg="lightgreen", state="normal")
-
     # Disable all buttons when the game ends
     def disable_buttons():
         for widget in english_frame.winfo_children():

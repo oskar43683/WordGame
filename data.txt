@@ -1,0 +1,5 @@
+goose123,password123,95
+kruk,wrona,0
+kebab,rz,0
+minecraft,life,0
+ges,ges,0
