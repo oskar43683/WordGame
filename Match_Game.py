@@ -4,23 +4,36 @@ import json
 import level_selection
 import sys
 import os
+from login import GameApp
 
-def start_match_game(frame, go_back_callback, level_file):
-    # Clear the existing frame
+def update_points_in_file(username, new_points, file_path="data.txt"):
+    """Update the user's points in the data file."""
+    try:
+        with open(file_path, "r") as file:
+            lines = file.readlines()
+        
+        with open(file_path, "w") as file:
+            for line in lines:
+                fields = line.strip().split(",")
+                if fields[0] == username:
+                    # Update the points for the logged-in user
+                    fields[2] = str(new_points)
+                    line = ",".join(fields) + "\n"
+                file.write(line)
+    except Exception as e:
+        print(f"Error updating points: {e}")
+
+def start_match_game(frame, go_back_callback, level_file, username, points):
     for widget in frame.winfo_children():
         widget.destroy()
 
-    # Load the word pairs from the selected level JSON file
     words = get_level_words(level_file)
 
-    # Function to get a random subset of 4 words
     def get_random_words(words, num=5):
         return random.sample(words, num)
 
-    # Get 4 random word pairs for the current round
     current_round_words = get_random_words(words)
 
-    # Prepare the lists of English and Polish words from the current round
     english_words = [word['english'] for word in current_round_words]
     polish_words = [word['polish'] for word in current_round_words]
 
@@ -34,10 +47,10 @@ def start_match_game(frame, go_back_callback, level_file):
     selected_english_button = None
     selected_polish_button = None
     correct_matches = 0
+    temp_points = 0
 
-    # Function to handle the matching logic
     def check_match():
-        nonlocal selected_english, selected_polish, selected_english_button, selected_polish_button, correct_matches
+        nonlocal selected_english, selected_polish, selected_english_button, selected_polish_button, correct_matches, points, temp_points
 
         # Check if the selected pair matches
         correct_pair = next(
@@ -51,6 +64,10 @@ def start_match_game(frame, go_back_callback, level_file):
             selected_english_button.config(state="disabled", bg="lime")
             selected_polish_button.config(state="disabled", bg="lime")
             correct_matches += 1
+            points += 15
+            temp_points += 15
+            temp_points_label.config(text=f"Points: {temp_points}")
+            update_points_in_file(username, points)
         else:
             result_label.config(text="Try again!", fg="red")
             selected_english_button.config(state="normal", bg="lightblue")
@@ -74,21 +91,17 @@ def start_match_game(frame, go_back_callback, level_file):
         for widget in polish_frame.winfo_children():
             widget.config(state="disabled")
 
-    # Handle English button selection
     def select_english(button):
         nonlocal selected_english, selected_english_button
         selected_english = button.cget("text")
         selected_english_button = button
-        button.config(bg="lightgray", state="disabled")
         if selected_polish:
             check_match()
 
-    # Handle Polish button selection
     def select_polish(button):
         nonlocal selected_polish, selected_polish_button
         selected_polish = button.cget("text")
         selected_polish_button = button
-        button.config(bg="lightgray", state="disabled")
         if selected_english:
             check_match()
         # else:
@@ -96,10 +109,31 @@ def start_match_game(frame, go_back_callback, level_file):
         #     button.config(bg="lightgreen", state="normal")
 
     # Add UI components to the frame
-    label = tk.Label(frame, text="Match the Words Game", font=("Arial", 18), bg="#1a1a2e", fg="#ffffff")
+    label = tk.Label(
+        frame, 
+        text="Match the Words Game", 
+        font=("Arial", 18), 
+        bg="#1a1a2e", 
+        fg="#ffffff"
+    )
     label.pack(pady=10)
 
-    result_label = tk.Label(frame, text="", font=("Helvetica", 14), bg="#1a1a2e", fg="#ffffff")
+    temp_points_label = tk.Label(
+        frame,
+        text=f"Points: {temp_points}",
+        font=("Helvetica", 14),
+        bg="#1a1a2e",
+        fg="#ffffff"
+    )
+    temp_points_label.pack(pady=10)
+
+    result_label = tk.Label(
+        frame,
+        text="",
+        font=("Helvetica", 14), 
+        bg="#1a1a2e", 
+        fg="#ffffff"
+    )
     result_label.pack(pady=10)
 
     # Create frames for English and Polish words

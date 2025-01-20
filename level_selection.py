@@ -3,8 +3,7 @@ import json
 import os
 import sys
 
-
-def select_level(frame, callback):
+def select_level(frame, callback, logged_in_username):
     # Clear the existing frame
     for widget in frame.winfo_children():
         widget.destroy()
@@ -61,8 +60,6 @@ def select_level(frame, callback):
 
     canvas.bind_all("<MouseWheel>", on_mousewheel)
 
-
-
 def get_resource_path(relative_path):
     """Get the absolute path to a resource, considering PyInstaller's bundle."""
     if getattr(sys, 'frozen', False):  # Running as a PyInstaller executable
@@ -71,7 +68,6 @@ def get_resource_path(relative_path):
         base_path = os.path.dirname(__file__)
     return os.path.join(base_path, relative_path)
 
-
 def get_level_words(level_file):
     """Load words from the selected level JSON file."""
     level_path = get_resource_path(f"levels/{level_file}")
@@ -79,8 +75,6 @@ def get_level_words(level_file):
         data = json.load(file)
     return data['words']
 
-
-# Example usage
 if __name__ == "__main__":
     def dummy_callback(level):
         print(f"Selected: {level}")

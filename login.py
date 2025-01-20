@@ -288,7 +288,7 @@ class GameApp(tk.Tk):
             font=("Arial", 14), 
             bg="#16213e", fg="#ffffff",
             activebackground="#0f3460", activeforeground="#ffffff",
-            command=lambda: level_selection.select_level(self.container, self.start_match_game)
+            command=lambda: level_selection.select_level(self.container, self.start_match_game, self.logged_in_username)
         )
         match_game_button.pack(pady=10, ipadx=10, ipady=5)
 
@@ -329,7 +329,8 @@ class GameApp(tk.Tk):
             widget.destroy()
 
     def start_match_game(self, selected_level_file):
-        Match_Game.start_match_game(self.container, self.show_menu, selected_level_file)
+        points = self.get_points()
+        Match_Game.start_match_game(self.container, self.show_menu, selected_level_file, self.logged_in_username, points)
 
 if __name__ == "__main__":
     app = GameApp()
