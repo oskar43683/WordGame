@@ -2,6 +2,8 @@ import tkinter as tk
 import level_selection
 import Match_Game
 import wordgame
+from PIL import Image, ImageTk  # To handle the background image
+
 
 def VerifyLogin(username, password, file_path):
     try:
@@ -32,7 +34,7 @@ def VerifyUsername(username, filepath):
 class GameApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Game App")
+        self.title("LinguaPlay")
         self.geometry("1200x700")
         self.configure(bg="#1a1a2e")
 
@@ -57,6 +59,13 @@ class GameApp(tk.Tk):
             fg="#ffffff"
         )
         title.pack(pady=20)
+
+        bg_image = Image.open("game/ocean.png")
+        bg_photo = ImageTk.PhotoImage(bg_image)
+
+        bg_label = tk.Label(self.container, image=bg_photo)
+        bg_label.image = bg_photo  # Keep a reference to avoid garbage collection
+        bg_label.place(relwidth=1, relheight=1)  # Cover the entire frame
 
         username_label = tk.Label(
             self.container,
@@ -100,7 +109,7 @@ class GameApp(tk.Tk):
                     self.container,
                     text="Invalid login credentials, please try again.",
                     font=("Arial", 12),
-                    bg="#1a1a2e", 
+                    bg="#1a1a2e",
                     fg="#ff0000"
                 )
                 error_label.pack(pady=10)
@@ -254,7 +263,7 @@ class GameApp(tk.Tk):
 
         title = tk.Label(
             self.container, 
-            text="Welcome to the Language Game!", 
+            text="LinguaPlay", 
             font=("Arial", 18, "bold"), 
             bg="#1a1a2e", 
             fg="#ffffff"
@@ -311,6 +320,16 @@ class GameApp(tk.Tk):
             command=self.show_login
         )
         exit_to_login_button.pack(pady=10, ipadx=10, ipady=5)
+
+        future_updates_label = tk.Label(
+            self.container,
+            text="We are also in the process of creating new game modes...",
+            font=("Arial", 14),
+            bg="#1a1a2e",
+            fg="#ffffff"
+        )
+        future_updates_label.pack(pady=20)
+
 
     def get_points(self):
         try:

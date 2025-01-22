@@ -1,6 +1,6 @@
 import tkinter as tk
 import random
-from PIL import Image, ImageTk  # To handle the background image
+from PIL import Image, ImageTk
 
 def start_word_game(frame, go_back_callback):
     # Clear the frame
@@ -8,7 +8,7 @@ def start_word_game(frame, go_back_callback):
         widget.destroy()
 
     # Load and set the background image
-    bg_image = Image.open("game/ocean.png")  # Replace with your image path
+    bg_image = Image.open("game/ocean.png")
     bg_photo = ImageTk.PhotoImage(bg_image)
 
     bg_label = tk.Label(frame, image=bg_photo)

@@ -1,6 +1,6 @@
-goose123,password123,560
+goose123,password123,635
 kruk,wrona,0
 kebab,rz,0
 minecraft,life,0
 ges,ges,0
-g,1,75
+g,1,150
