@@ -1,39 +1,85 @@
 import tkinter as tk
-import level_selection
+import os
+
+# Import these after the basic imports
+import level_selection  # For match game
 import Match_Game
 import wordgame
+import word_level_selection
+
+def get_data_file_path():
+    # Get the directory where the script is located
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # Create a data directory if it doesn't exist
+    data_dir = os.path.join(current_dir, "gamedata")
+    os.makedirs(data_dir, exist_ok=True)
+    # Return the full path to data.txt
+    return os.path.join(data_dir, "data.txt")
 
 def VerifyLogin(username, password, file_path):
     try:
+        file_path = get_data_file_path()  # Use the new file path
+        if not file_path:
+            raise ValueError("File path is empty")
+        
+        # Create the file if it doesn't exist
+        with open(file_path, "a+") as file:
+            pass
+        
         with open(file_path, "r") as file:
             lines = file.readlines()
+            if not lines:
+                raise ValueError("File is empty")
+            
             for line in lines:
                 fields = line.strip().split(",")
-                if len(fields) >= 2 and fields[0] == username and fields[1] == password:
+                if len(fields) < 2:
+                    raise ValueError("Malformed line in file: " + line)
+                
+                if fields[0] == username and fields[1] == password:
                     return True
     except FileNotFoundError:
-        print(f"Error: {file_path} not found.")
+        print(f"Error: File '{file_path}' not found")
+    except IOError as e:
+        print(f"Error: I/O error occurred when reading '{file_path}': {e}")
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error: Unexpected error occurred: {e}")
     return False
 
+
 def VerifyUsername(username, filepath):
+    if not username:
+        raise ValueError("Username is required")
+    if not filepath:
+        raise ValueError("File path is empty")
+    
+    filepath = get_data_file_path()  # Use the new file path
     try:
+        # Create the file if it doesn't exist
+        with open(filepath, "a+") as file:
+            pass
+
         with open(filepath, 'r') as file:
             lines = file.readlines()
             for line in lines:
                 fields = line.split(",")
+                if len(fields) < 1:
+                    raise ValueError("Malformed line in file: " + line)
                 if fields[0] == username:
                     return True
+    except FileNotFoundError:
+        print(f"Error: File '{filepath}' not found")
+    except IOError as e:
+        print(f"Error: I/O error occurred when reading '{filepath}': {e}")
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error: Unexpected error occurred: {e}")
     return False
 
 class GameApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Game App")
-        self.geometry("1200x700")
+        self.title("LinguaPlay")
+        self.geometry("1280x720")
         self.configure(bg="#1a1a2e")
 
         # Create a main container frame
@@ -51,7 +97,7 @@ class GameApp(tk.Tk):
 
         title = tk.Label(
             self.container, 
-            text="Language Learning Game", 
+            text="LinguaPlay",
             font=("Arial", 18, "bold"), 
             bg="#1a1a2e", 
             fg="#ffffff"
@@ -92,13 +138,23 @@ class GameApp(tk.Tk):
         def check_login():
             username = username_entry.get()
             password = password_entry.get()
-            if VerifyLogin(username, password, "data.txt"):
-                self.logged_in_username = username  # Store the logged-in user
-                self.show_menu()
+            if username and password:
+                if VerifyLogin(username, password, "data.txt"):
+                    self.logged_in_username = username  # Store the logged-in user
+                    self.show_menu()
+                else:
+                    error_label = tk.Label(
+                        self.container,
+                        text="Invalid login credentials, please try again.",
+                        font=("Arial", 12),
+                        bg="#1a1a2e", 
+                        fg="#ff0000"
+                    )
+                    error_label.pack(pady=10)
             else:
                 error_label = tk.Label(
                     self.container,
-                    text="Invalid login credentials, please try again.",
+                    text="Please fill in all fields.",
                     font=("Arial", 12),
                     bg="#1a1a2e", 
                     fg="#ff0000"
@@ -141,7 +197,7 @@ class GameApp(tk.Tk):
             font=("Arial", 14), 
             bg="#900d0d", fg="#ffffff",
             activebackground="#ff0000", activeforeground="#ffffff",
-            command=self.quit
+            command=self.destroy
         )
         exit_button.pack(pady=10, ipadx=10, ipady=5)
 
@@ -191,10 +247,11 @@ class GameApp(tk.Tk):
         def register():
             username = username_entry.get()
             password = password_entry.get()
-            if not VerifyUsername(username, "data.txt"):
-                if username and password:
+            data_file = get_data_file_path()  # Use the new file path
+            if username and password:
+                if not VerifyUsername(username, data_file):
                     try:
-                        with open("data.txt", "a") as file:
+                        with open(data_file, "a") as file:
                             file.write(f"{username},{password},0\n")
                         self.show_login()
                     except Exception as e:
@@ -209,7 +266,7 @@ class GameApp(tk.Tk):
                 else:
                     error_label = tk.Label(
                             self.container,
-                            text="Please fill in all fields.",
+                            text="User already exists. Please try a different username.",
                             font=("Arial", 12),
                             bg="#1a1a2e",
                             fg="#ff0000"
@@ -218,7 +275,7 @@ class GameApp(tk.Tk):
             else:
                 error_label = tk.Label(
                     self.container,
-                    text="User already exists. Please try a different username.",
+                    text="Please fill in all fields.",
                     font=("Arial", 12),
                     bg="#1a1a2e",
                     fg="#ff0000"
@@ -254,7 +311,7 @@ class GameApp(tk.Tk):
 
         title = tk.Label(
             self.container, 
-            text="Welcome to the Language Game!", 
+            text="LinguaPlay", 
             font=("Arial", 18, "bold"), 
             bg="#1a1a2e", 
             fg="#ffffff"
@@ -278,7 +335,11 @@ class GameApp(tk.Tk):
             font=("Arial", 14), 
             bg="#16213e", fg="#ffffff",
             activebackground="#0f3460", activeforeground="#ffffff",
-            command=lambda: wordgame.start_word_game(self.container, self.show_menu)
+            command=lambda: word_level_selection.select_word_level(
+                self.container, 
+                self.start_word_game, 
+                self.logged_in_username
+            )
         )
         word_game_button.pack(pady=10, ipadx=10, ipady=5)
 
@@ -314,7 +375,8 @@ class GameApp(tk.Tk):
 
     def get_points(self):
         try:
-            with open("data.txt", "r") as file:
+            data_file = get_data_file_path()  # Use the new file path
+            with open(data_file, "r") as file:
                 lines = file.readlines()
                 for line in lines:
                     fields = line.strip().split(",")
@@ -329,8 +391,22 @@ class GameApp(tk.Tk):
             widget.destroy()
 
     def start_match_game(self, selected_level_file):
-        points = self.get_points()
-        Match_Game.start_match_game(self.container, self.show_menu, selected_level_file, self.logged_in_username, points)
+        if selected_level_file == "back_to_menu":
+            self.show_menu()
+        else:
+            points = self.get_points()
+            Match_Game.start_match_game(self.container, self.show_menu, selected_level_file, self.logged_in_username, points)
+
+    def start_word_game(self, selected_level_file):
+        if selected_level_file == "back_to_menu":
+            self.show_menu()
+        else:
+            wordgame.start_word_game(
+                self.container, 
+                self.show_menu, 
+                selected_level_file, 
+                self.logged_in_username
+            )
 
 if __name__ == "__main__":
     app = GameApp()

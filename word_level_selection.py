@@ -3,7 +3,7 @@ import json
 import os
 import sys
 
-def select_level(frame, callback, logged_in_username):
+def select_word_level(frame, callback, logged_in_username):
     # Clear the existing frame
     for widget in frame.winfo_children():
         widget.destroy()
@@ -40,7 +40,7 @@ def select_level(frame, callback, logged_in_username):
     # Add title
     title = tk.Label(
         scrollable_frame,
-        text="Select Level",
+        text="Select Word Game Level",
         font=("Arial", 18, "bold"),
         bg="#1a1a2e",
         fg="#ffffff"
@@ -63,7 +63,7 @@ def select_level(frame, callback, logged_in_username):
         )
         level_button.pack(pady=5)
 
-    # Add back to menu button at the bottom
+    # Add back to menu button
     back_button = tk.Button(
         scrollable_frame,
         text="Back to Menu",
@@ -74,35 +74,4 @@ def select_level(frame, callback, logged_in_username):
         activeforeground="#ffffff",
         command=lambda: callback("back_to_menu"),
     )
-    back_button.pack(pady=20)
-
-def get_resource_path(relative_path):
-    """Get the absolute path to a resource, considering PyInstaller's bundle."""
-    if getattr(sys, 'frozen', False):  # Running as a PyInstaller executable
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.dirname(__file__)
-    return os.path.join(base_path, relative_path)
-
-def get_level_words(level_file):
-    """Load words from the selected level JSON file."""
-    level_path = get_resource_path(f"levels/{level_file}")
-    with open(level_path, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-    return data['words']
-
-if __name__ == "__main__":
-    def dummy_callback(level):
-        print(f"Selected: {level}")
-
-    root = tk.Tk()
-    root.geometry("400x600")
-    root.title("Level Selector")
-    root.configure(bg="#1a1a2e")
-
-    main_frame = tk.Frame(root, bg="#1a1a2e")
-    main_frame.pack(fill="both", expand=True)
-
-    select_level(main_frame, dummy_callback)
-
-    root.mainloop()
+    back_button.pack(pady=20) 

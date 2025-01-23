@@ -4,15 +4,14 @@ import json
 import level_selection
 import sys
 import os
-from login import GameApp
 
-def update_points_in_file(username, new_points, file_path="data.txt"):
+def update_points_in_file(username, new_points, data_file_path):
     """Update the user's points in the data file."""
     try:
-        with open(file_path, "r") as file:
+        with open(data_file_path, "r") as file:
             lines = file.readlines()
         
-        with open(file_path, "w") as file:
+        with open(data_file_path, "w") as file:
             for line in lines:
                 fields = line.strip().split(",")
                 if fields[0] == username:
@@ -67,7 +66,9 @@ def start_match_game(frame, go_back_callback, level_file, username, points):
             points += 15
             temp_points += 15
             temp_points_label.config(text=f"Points: {temp_points}")
-            update_points_in_file(username, points)
+            # Get data file path from the passed parameter
+            data_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gamedata", "data.txt")
+            update_points_in_file(username, points, data_file_path)
         else:
             result_label.config(text="Try again!", fg="red")
             selected_english_button.config(state="normal", bg="lightblue")
