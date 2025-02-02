@@ -7,6 +7,9 @@ import os
 
 def update_points_in_file(username, new_points, data_file_path):
     """Update the user's points in the data file."""
+    if not username or not data_file_path:
+        raise ValueError("Username and data file path are required")
+    
     try:
         with open(data_file_path, "r") as file:
             lines = file.readlines()
@@ -14,11 +17,17 @@ def update_points_in_file(username, new_points, data_file_path):
         with open(data_file_path, "w") as file:
             for line in lines:
                 fields = line.strip().split(",")
+                if len(fields) != 3:
+                    raise ValueError("Malformed line in file")
                 if fields[0] == username:
                     # Update the points for the logged-in user
                     fields[2] = str(new_points)
                     line = ",".join(fields) + "\n"
                 file.write(line)
+    except FileNotFoundError:
+        print(f"Error updating points: File '{data_file_path}' not found")
+    except IOError as e:
+        print(f"Error updating points: I/O error occurred when writing to '{data_file_path}': {e}")
     except Exception as e:
         print(f"Error updating points: {e}")
 
@@ -27,6 +36,23 @@ def start_match_game(frame, go_back_callback, level_file, username, points):
         widget.destroy()
 
     words = get_level_words(level_file)
+    if not words:
+        tk.Label(
+            frame,
+            text="Error loading words. Please try a different level.",
+            font=("Arial", 18),
+            bg="#1a1a2e",
+            fg="#ff3860"
+        ).pack(pady=20)
+        tk.Button(
+            frame,
+            text="Back to Menu",
+            font=("Arial", 14),
+            bg="#16213e",
+            fg="#ffffff",
+            command=go_back_callback
+        ).pack(pady=20)
+        return
 
     def get_random_words(words, num=5):
         return random.sample(words, num)
@@ -36,11 +62,9 @@ def start_match_game(frame, go_back_callback, level_file, username, points):
     english_words = [word['english'] for word in current_round_words]
     polish_words = [word['polish'] for word in current_round_words]
 
-    # Shuffle both the English and Polish words
     random.shuffle(english_words)
     random.shuffle(polish_words)
 
-    # Variables to track the game state
     selected_english = None
     selected_polish = None
     selected_english_button = None
@@ -51,7 +75,6 @@ def start_match_game(frame, go_back_callback, level_file, username, points):
     def check_match():
         nonlocal selected_english, selected_polish, selected_english_button, selected_polish_button, correct_matches, points, temp_points
 
-        # Check if the selected pair matches
         correct_pair = next(
             (pair for pair in current_round_words 
                 if pair['english'] == selected_english and pair['polish'] == selected_polish),
@@ -66,26 +89,25 @@ def start_match_game(frame, go_back_callback, level_file, username, points):
             points += 15
             temp_points += 15
             temp_points_label.config(text=f"Points: {temp_points}")
-            # Get data file path from the passed parameter
             data_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gamedata", "data.txt")
-            update_points_in_file(username, points, data_file_path)
+            try:
+                update_points_in_file(username, points, data_file_path)
+            except Exception as e:
+                print(f"Error updating points: {e}")
         else:
             result_label.config(text="Try again!", fg="red")
             selected_english_button.config(state="normal", bg="lightblue")
             selected_polish_button.config(state="normal", bg="lightgreen")
-            #frame.after(1000, flip_back)
 
         if correct_matches == len(current_round_words):
             result_label.config(text="You won!", fg="blue")
             disable_buttons()
 
-        # Reset selections
         selected_english = None
         selected_polish = None
         selected_english_button = None
         selected_polish_button = None
 
-    # Disable all buttons when the game ends
     def disable_buttons():
         for widget in english_frame.winfo_children():
             widget.config(state="disabled")
@@ -105,11 +127,7 @@ def start_match_game(frame, go_back_callback, level_file, username, points):
         selected_polish_button = button
         if selected_english:
             check_match()
-        # else:
-        #     result_label.config(text="Select an English word first!", fg="orange")
-        #     button.config(bg="lightgreen", state="normal")
 
-    # Add UI components to the frame
     label = tk.Label(
         frame, 
         text="Match the Words Game", 
@@ -137,14 +155,12 @@ def start_match_game(frame, go_back_callback, level_file, username, points):
     )
     result_label.pack(pady=10)
 
-    # Create frames for English and Polish words
     english_frame = tk.Frame(frame, bg="#1a1a2e")
     english_frame.pack(side="left", padx=20)
 
     polish_frame = tk.Frame(frame, bg="#1a1a2e")
     polish_frame.pack(side="right", padx=20)
 
-    # Add English word buttons
     for word in english_words:
         button = tk.Button(
             english_frame, 
@@ -153,11 +169,10 @@ def start_match_game(frame, go_back_callback, level_file, username, points):
             bg="lightblue", 
             width=30, 
             height=2
-            )
+        )
         button.config(command=lambda button=button: select_english(button))
         button.pack(pady=5)
 
-    # Add Polish word buttons
     for word in polish_words:
         button = tk.Button(
             polish_frame, 
@@ -165,11 +180,11 @@ def start_match_game(frame, go_back_callback, level_file, username, points):
             font=("Arial", 14), 
             bg="lightgreen", 
             width=30, 
-            height=2)
+            height=2
+        )
         button.config(command=lambda button=button: select_polish(button))
         button.pack(pady=5)
 
-    # Back to menu button
     back_button = tk.Button(
         frame,
         text="Back to Menu",
@@ -185,14 +200,27 @@ def start_match_game(frame, go_back_callback, level_file, username, points):
 def get_resource_path(relative_path):
     """Get the absolute path to a resource, considering PyInstaller's bundle."""
     if getattr(sys, 'frozen', False):  # Running as a PyInstaller executable
-        base_path = sys._MEIPASS
+        base_path = getattr(sys, '_MEIPASS', None)
+        if base_path is None:
+            raise ValueError("_MEIPASS is not set")
     else:
         base_path = os.path.dirname(__file__)
+        if base_path is None:
+            raise ValueError("__file__ is not set")
     return os.path.join(base_path, relative_path)
 
 def get_level_words(level_file):
     """Load words from the selected level JSON file."""
     level_path = get_resource_path(f"levels/{level_file}")
+    if level_path is None:
+        raise ValueError("Level file path is not set")
+    if not os.path.isfile(level_path):
+        raise FileNotFoundError(f"Level file not found: {level_path}")
     with open(level_path, 'r', encoding='utf-8') as file:
-        data = json.load(file)
+        try:
+            data = json.load(file)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Error decoding JSON: {e}")
+    if 'words' not in data:
+        raise ValueError("Level file does not contain 'words' key")
     return data['words']

@@ -184,7 +184,7 @@ def start_word_game(frame, callback, level_file, username):
             return
         
         # Handle letter input (now including _, ?, ,, and ')
-        if event.char.isalpha() or event.char in ['_', '?', ',', "'"]:
+        if event.char.isalpha() or event.char in ['_', '?', ',', "'", '(', ')', '-']:
             # Clear any existing content and insert the new character
             current_entry.delete(0, tk.END)
             current_entry.insert(0, event.char)

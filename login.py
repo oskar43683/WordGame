@@ -2,7 +2,7 @@ import tkinter as tk
 import os
 
 # Import these after the basic imports
-import level_selection  # For match game
+import level_selection  # For match game and word game
 import Match_Game
 import wordgame
 import word_level_selection

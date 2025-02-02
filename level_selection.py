@@ -5,8 +5,9 @@ import sys
 
 def select_level(frame, callback, logged_in_username):
     # Clear the existing frame
-    for widget in frame.winfo_children():
-        widget.destroy()
+    if frame:
+        for widget in frame.winfo_children():
+            widget.destroy()
 
     # Create a Canvas with a Scrollbar
     canvas = tk.Canvas(frame, bg="#1a1a2e", highlightthickness=0)
@@ -17,13 +18,14 @@ def select_level(frame, callback, logged_in_username):
     # Create a Frame inside the Canvas
     scrollable_frame = tk.Frame(canvas, bg="#1a1a2e")
     scrollable_frame_id = canvas.create_window(
-        (0, 0), window=scrollable_frame, anchor="nw"  # Keep top alignment
+        (0, 0), window=scrollable_frame, anchor="nw"
     )
 
     # Configure the Canvas scroll region
     def configure_canvas(event=None):
-        canvas.configure(scrollregion=canvas.bbox("all"))
-        canvas.itemconfig(scrollable_frame_id, width=canvas.winfo_width())
+        if canvas:
+            canvas.configure(scrollregion=canvas.bbox("all"))
+            canvas.itemconfig(scrollable_frame_id, width=canvas.winfo_width())
 
     scrollable_frame.bind("<Configure>", configure_canvas)
     canvas.bind("<Configure>", configure_canvas)
@@ -32,8 +34,8 @@ def select_level(frame, callback, logged_in_username):
     def on_mousewheel(event):
         try:
             canvas.yview_scroll(-1 * int(event.delta / 120), "units")
-        except tk.TclError:
-            pass  # Ignore the error when scrolling
+        except (tk.TclError, AttributeError):
+            pass  # Ignore errors when scrolling
 
     canvas.bind_all("<MouseWheel>", on_mousewheel)
 
@@ -59,7 +61,7 @@ def select_level(frame, callback, logged_in_username):
             fg="#ffffff",
             activebackground="#0f3460",
             activeforeground="#ffffff",
-            command=lambda level=level: callback(level),
+            command=lambda level=level: callback(level) if callback else None,
         )
         level_button.pack(pady=5)
 
@@ -72,28 +74,51 @@ def select_level(frame, callback, logged_in_username):
         fg="#ffffff",
         activebackground="#0f3460",
         activeforeground="#ffffff",
-        command=lambda: callback("back_to_menu"),
+        command=lambda: callback("back_to_menu") if callback else None,
     )
     back_button.pack(pady=20)
 
 def get_resource_path(relative_path):
     """Get the absolute path to a resource, considering PyInstaller's bundle."""
     if getattr(sys, 'frozen', False):  # Running as a PyInstaller executable
-        base_path = sys._MEIPASS
+        base_path = getattr(sys, '_MEIPASS', None)
+        if base_path is None:
+            raise ValueError("_MEIPASS is not set")
     else:
         base_path = os.path.dirname(__file__)
+        if base_path is None:
+            raise ValueError("__file__ is not set")
     return os.path.join(base_path, relative_path)
 
 def get_level_words(level_file):
     """Load words from the selected level JSON file."""
+
+    if not level_file:
+        return []
+
     level_path = get_resource_path(f"levels/{level_file}")
-    with open(level_path, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-    return data['words']
+
+    try:
+        with open(level_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            return data.get('words', [])
+    except FileNotFoundError:
+        print(f"Error loading level words: {level_file} not found")
+        print(f"Attempted to load from: {level_path}")  # Added for debugging
+        return []
+    except json.JSONDecodeError as e:
+        print(f"Error loading level words: {e}")
+        return []
 
 if __name__ == "__main__":
     def dummy_callback(level):
-        print(f"Selected: {level}")
+        if level:
+            try:
+                print(f"Selected: {level}")
+            except Exception as e:
+                print(f"An error occurred: {e}")
+        else:
+            print("No level selected.")
 
     root = tk.Tk()
     root.geometry("400x600")

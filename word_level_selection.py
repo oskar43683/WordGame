@@ -5,8 +5,9 @@ import sys
 
 def select_word_level(frame, callback, logged_in_username):
     # Clear the existing frame
-    for widget in frame.winfo_children():
-        widget.destroy()
+    if frame:
+        for widget in frame.winfo_children():
+            widget.destroy()
 
     # Create a Canvas with a Scrollbar
     canvas = tk.Canvas(frame, bg="#1a1a2e", highlightthickness=0)
@@ -17,13 +18,14 @@ def select_word_level(frame, callback, logged_in_username):
     # Create a Frame inside the Canvas
     scrollable_frame = tk.Frame(canvas, bg="#1a1a2e")
     scrollable_frame_id = canvas.create_window(
-        (0, 0), window=scrollable_frame, anchor="nw"  # Keep top alignment
+        (0, 0), window=scrollable_frame, anchor="nw"
     )
 
     # Configure the Canvas scroll region
     def configure_canvas(event=None):
-        canvas.configure(scrollregion=canvas.bbox("all"))
-        canvas.itemconfig(scrollable_frame_id, width=canvas.winfo_width())
+        if canvas:
+            canvas.configure(scrollregion=canvas.bbox("all"))
+            canvas.itemconfig(scrollable_frame_id, width=canvas.winfo_width())
 
     scrollable_frame.bind("<Configure>", configure_canvas)
     canvas.bind("<Configure>", configure_canvas)
@@ -32,8 +34,8 @@ def select_word_level(frame, callback, logged_in_username):
     def on_mousewheel(event):
         try:
             canvas.yview_scroll(-1 * int(event.delta / 120), "units")
-        except tk.TclError:
-            pass  # Ignore the error when scrolling
+        except (tk.TclError, AttributeError):
+            pass  # Ignore errors when scrolling
 
     canvas.bind_all("<MouseWheel>", on_mousewheel)
 
@@ -74,4 +76,4 @@ def select_word_level(frame, callback, logged_in_username):
         activeforeground="#ffffff",
         command=lambda: callback("back_to_menu"),
     )
-    back_button.pack(pady=20) 
+    back_button.pack(pady=20)
